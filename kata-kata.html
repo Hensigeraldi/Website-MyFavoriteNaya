@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kata-Kata Romantis</title>
+  <style>
+    /* Reset dasar */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: black;
+      min-height: 100vh;
+      padding: 20px;
+      font-family: 'Arial', sans-serif;
+    }
+    .back-btn {
+        display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, #6b73ff, #000dff);
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin-top: 20px;
+    }
+
+    /* WRAPPER untuk layout desktop vs mobile */
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 80px auto 0;
+      flex-wrap: wrap;
+    }
+
+    /* Kontainer gambar */
+    .image {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      flex: 0 0 auto;
+    }
+    .side-image {
+      width: 180px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px pink;
+      opacity: 0.8;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .side-image:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    /* Kontainer pesan */
+    .message-container {
+      flex: 1 1 400px;
+      padding: 30px;
+      background: #1c1f2b;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(250, 247, 247, 0.1);
+      position: relative;
+    }
+    @property --angle {
+      syntax: "<angle>";
+      initial-value: 0deg;
+      inherits: false;
+    }
+    .message-container::after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-image: conic-gradient(from var(--angle), transparent 70%, blue);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      padding: 5px;
+      border-radius: 10px;
+      animation: spin 3s linear infinite;
+    }
+    @keyframes spin {
+      from { --angle: 0deg; }
+      to   { --angle: 360deg; }
+    }
+
+    .quote {
+      font-size: 24px;
+      line-height: 1.6;
+      color: #fdfbfb;
+      margin-bottom: 30px;
+      text-align: center;
+      font-style: italic;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.8s ease forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .quote:nth-child(2) { animation-delay: 0.5s; }
+    .quote:nth-child(3) { animation-delay: 1s; }
+    .quote:nth-child(4) { animation-delay: 1.5s; }
+    .quote:nth-child(5) { animation-delay: 2s; }
+
+    h2 {
+      color: #fdfbfb;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, #6b73ff, #000dff);
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin-top: 20px;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+    }
+
+    /* BREAKPOINT untuk layar lebih kecil (tablet & smartphone) */
+    @media (max-width: 1024px) {
+      .wrapper {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 60px;
+      }
+      .message-container {
+        margin-top: 30px;
+      }
+    }
+    @media (max-width: 480px) {
+      .quote { font-size: 18px; margin-bottom: 20px; }
+      h2    { font-size: 18px; }
+      .side-image { width: 80%; max-width: 300px; }
+      .image {
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="back-btn" onclick="window.history.back()">Kembali</button>
+  <audio autoplay loop>
+    <source src="nadhif_basalamah_-_penjaga_hati__Official_Music_Video_(256k).mp3" type="audio/mpeg">
+    Browser kamu tidak mendukung pemutar audio.
+  </audio>
+
+
+  <div class="wrapper">
+    <div class="image">
+      <video src="VideoNaya.mp4" class="side-image" autoplay muted loop playsinline></video>
+      <h2>Mentang" cantik jadi ga bisa di marahin ngeselin emang!!!</h2><br>
+      <img src="foto.jpg" alt="Romantic Right" class="side-image">
+    </div>
+
+    <div class="message-container">
+      <div class="quote">
+        "Hai sayangku yang sangat ngeselinn!! gatau kamu hari ini ngeselin banget beneran kamu kayak ga peduli banget sama chat akuu padahal aku ngechat kamu gaa liat baikk" terus kamu masih nanya lagii padahal aku sudahh chattt  huffttt tapii mau gimanapun aku gaabisaa banget untuk kesell ke kamuuu!! <br><br>
+
+        oh iyaa aku ada fakta yang sangat menarik banget untuk kamu tapii gatau deh kamu sudah melihatnya atau tidak aku pun tidak tauu salah satu faktanya yaa sayang yang paling menakjubkan banget tentang luar angkasa yakan di planet jupiter dan saturnus itu ada hujan berlian tauuu hahahah gilaa banget dan berliannya itu mungkin di dalam atmosfer dulu kan abis tu ntr jatuh kek hujan gitu tapi hujan berlian. Bayangkan gimana kerennya kalau ada di bumi tapi takutnya ntar kena kepala malah benjol lagi sayang hahahahaha, trus ntar berliannya udah ga ada harganya lagi kalau ada di bumi hahahah soalnya saking banyaknya cobaa huaaa <br> tapii masih banyak tau fakta menarik nya lagi huaaa ntr kamu baca aja yaa fakta menariknya di situ nanti kamu pencet aja tombol itu ntar langsung masuk di situsnyaa
+
+        segitu aja dulu deh sayangg besokk" aku buatin yang lebih keren lagi yaaaa akuu buattt ini sudah dari tadi tauuu sudahh 3 jam kayaknyaa, demiii kamuu soalnyaa aku kan pingin pamer jugaa wleee ke kamuu yang aku buat iniii, tapi masih kurang yaa sayangg masihh belum perfect bangett huaaaa nantii aku mau buat yang lebih kerenn lagii yaaaa <br>
+        i lovee youuu sayanggg kuu nayaaa yang paling lucu seduniaa dan ngeselinn!!! 🤍🤍🤍🩶💙💙💜💜🩵
+        "
+      </div>
+      <h2>Fakta menariknya aku liat di tombol di bawah ini tau sayanggkuuuu Hahahaha, ucul kan?</h2>
+      <a href="https://osc.medcom.id/community/fakta-menarik-tentang-luar-angkasa-yang-harus-kamu-tahu-6836?utm_source=chatgpt.com" target="_blank" class="btn">Disini yaaa!!</a>
+    </div>
+  </div>
+</body>
+</html>

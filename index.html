@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Message</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .love-btn {
+            padding: 20px 40px;
+            font-size: 24px;
+            background: #ff4757;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .love-btn:hover {
+            transform: scale(1.1);
+            background: #ff6b81;
+            box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+        }
+
+        .love-btn::before {
+            content: '❤️';
+            position: absolute;
+            left: -30px;
+            transition: all 0.3s ease;
+        }
+
+        .love-btn:hover::before {
+            left: 10px;
+        }
+
+        .love-btn::after {
+            content: '❤️';
+            position: absolute;
+            right: -30px;
+            transition: all 0.3s ease;
+        }
+
+        .love-btn:hover::after {
+            right: 10px;
+        }
+
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            color: #ff4757;
+            animation: float 4s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+    <div class="container">
+        <button class="love-btn" onclick="navigateToMessages()">di tekan dongg maniss ngeselin</button>
+    </div>
+
+    <script>
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            for (let i = 0; i < 10; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '❤';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 2 + 's';
+                heartsContainer.appendChild(heart);
+            }
+        }
+
+        function navigateToMessages() {
+            window.location.href = 'kata-kata.html';
+        }
+
+        // Initialize hearts on load
+        window.onload = createHearts;
+    </script>
+</body>
+</html>
